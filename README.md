@@ -6,7 +6,8 @@ ABOUT US:
 - Jexson Montilla.
     Encargado de realizar: 
 - Jhonathan Rengifo Castillo
-    Encargado de realizar: 
+    Encargado de realizar:
+    - Crear los modelos del proyecto.
 
 OBJETIVOS:
 1. Crear una aplicación WEB estilo BLOG programada en Python - Django, la cuál contendrá admin, perfiles, registro, páginas y formularios.

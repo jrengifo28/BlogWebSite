@@ -10,6 +10,9 @@ class Usuario(models.Model):
     nombre_usuario = models.CharField(max_length=40)
     contraseña = models.CharField(max_length=40)
 
+    def __str__(self):
+        return f"Nombre: {self.nombre} Apellido: {self.apellido}"
+
 
 class Pagina(models.Model):
     titulo = models.CharField(max_length=40)
@@ -18,3 +21,6 @@ class Pagina(models.Model):
     autor = models.CharField(max_length=40)
     fecha = models.DateField()
     imagen = models.FileField()
+
+    def __str__(self):
+        return f"Titulo: {self.titulo} Subtitulo: {self.subtitulo} Autor: {self.autor}"
