@@ -11,7 +11,7 @@ class Usuario(models.Model):
     contraseña = models.CharField(max_length=40)
 
     def __str__(self):
-        return f"Nombre: {self.nombre} Apellido: {self.apellido}"
+        return f"({self.nombre_usuario}) {self.nombre} {self.apellido}"
 
 
 class Pagina(models.Model):
@@ -23,4 +23,4 @@ class Pagina(models.Model):
     imagen = models.FileField()
 
     def __str__(self):
-        return f"Titulo: {self.titulo} Subtitulo: {self.subtitulo} Autor: {self.autor}"
+        return f"Titulo: {self.titulo} Subtitulo: {self.subtitulo} - ({self.autor})"
