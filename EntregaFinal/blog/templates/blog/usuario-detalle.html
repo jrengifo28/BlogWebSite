@@ -1,0 +1,17 @@
+<head>
+    <title> Detalle de Usuarios </title>
+</head>
+{% extends "blog/navegacion.html" %}
+{% load static %}
+
+{% block contenido_nuevo %}
+
+<container>
+    <p>Nombre del usuario {{usuario.nombre}} </p>
+    <p>Apellido del usuario: {{usuario.apellido}} </p>
+    <p>Email: {{usuario.email}}</p>
+    <p>Nombre de usuario: {{usuario.nombre_usuario}}</p>
+    <p>Contraseña: {{usuario.contraseña}} </p>
+</container>
+
+{% endblock %}

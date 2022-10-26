@@ -6,15 +6,15 @@
 
 {% block contenido_nuevo %}
 
-<h3>Usuarios Registrados</h3>
+<h4>Usuarios Registrados</h4>
 
 <ul>
     {% for usuario in object_list %}
     <li>
-        <p>Nombre: {{usuario.nombre}} </p>
-        <p>Apellido: {{usuario.apellido}} </p>
-        <p>Email: {{usuario.email}}</p>
-        <p>Nombre usuario: {{usuario.nombre_usuario}} </p>
+        <p>Usuario: {{usuario.nombre}} {{usuario.apellido}} - Usr: {{usuario.nombre_usuario}} </p>
+        <p>
+            <a class="btn btn-outline-success" href="{% url 'UsuarioDetalle' usuario.id %}"> Ver </a>
+        </p>
     </li>
     {% endfor %}
 </ul>
