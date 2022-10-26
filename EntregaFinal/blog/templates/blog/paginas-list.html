@@ -1,0 +1,24 @@
+<head>
+    <title> Lista de Páginas </title>
+</head>
+{% extends "blog/navegacion.html" %}
+{% load static %}
+
+{% block contenido_nuevo %}
+
+<h3>Páginas Creadas</h3>
+
+<ul>
+    {% for pagina in object_list %}
+    <li>
+        <p>Titulo: {{pagina.titulo}} </p>
+        <p>Subtitulo: {{pagina.subtitulo}} </p>
+        <p>cuerpo: {{pagina.cuerpo}}</p>
+        <p>Autor: {{pagina.autor}} </p>
+        <p>Fecha: {{pagina.fecha}} </p>
+        <p>Imagen: {{pagina.imagen}} </p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
