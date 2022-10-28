@@ -6,14 +6,25 @@
 
 {% block contenido_nuevo %}
 
-<h4>Usuarios Registrados</h4>
+<container>
+    <div class="row g-0">
+        <div class="col-sm 2"><a class="btn btn-success" href="{% url 'UsuarioNuevo' %}">Crear Usuario</a></div>
+        <div class="col-sm 8"></div>
+        <div class="col-sm-2"></div>
+    </div>
+</container>
+<br>
+
+<h4>Usuarios Registrados: </h4>
 
 <ul>
     {% for usuario in object_list %}
     <li>
         <p>Usuario: {{usuario.nombre}} {{usuario.apellido}} - Usr: {{usuario.nombre_usuario}} </p>
         <p>
-            <a class="btn btn-outline-success" href="{% url 'UsuarioDetalle' usuario.id %}"> Ver </a>
+            <a class="btn btn-outline-success" href="{% url 'UsuarioDetalle' usuario.id %}"> Ver Detalle </a>
+            <a class="btn btn-outline-warning" href="{% url 'UsuarioActualizar' usuario.id %}"> Actualizar </a>
+            <a class="btn btn-outline-danger" href="{% url 'UsuarioBorrar' usuario.id %}"> Borrar </a>
         </p>
     </li>
     {% endfor %}

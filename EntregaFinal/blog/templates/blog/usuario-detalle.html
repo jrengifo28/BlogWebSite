@@ -12,6 +12,9 @@
     <p>Email: {{usuario.email}}</p>
     <p>Nombre de usuario: {{usuario.nombre_usuario}}</p>
     <p>Contraseña: {{usuario.contraseña}} </p>
+    <p>
+        <a class="btn btn-outline-success" href="{% url 'UsuarioList' %}"> Regresar </a>
+    </p>
 </container>
 
 {% endblock %}
