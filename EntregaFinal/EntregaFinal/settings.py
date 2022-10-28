@@ -126,4 +126,5 @@ STATICFILE_DIRS = (os.path.join(BASE_DIR, "EntregaFianl/static"),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/blog'
+LOGIN_URL = '/blog/login/'
+LOGIN_REDIRECT_URL = LOGIN_URL
