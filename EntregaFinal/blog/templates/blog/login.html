@@ -1,0 +1,15 @@
+<head>
+    <title> Login </title>
+</head>
+{% extends "blog/navegacion.html" %}
+{% load static %}
+
+{% block contenido_nuevo %}
+
+<form action="" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <button type="submit" name="submit" class="btn btn-outline-info">Iniciar Sesión</button>
+</form>
+
+{% endblock %}

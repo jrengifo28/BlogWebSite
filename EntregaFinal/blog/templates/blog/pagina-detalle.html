@@ -1,0 +1,21 @@
+<head>
+    <title> Detalle de Paginas </title>
+</head>
+{% extends "blog/navegacion.html" %}
+{% load static %}
+
+{% block contenido_nuevo %}
+
+<container>
+    <p>Titulo: {{pagina.titulo}} </p>
+    <p>Subtitulo: {{pagina.subtitulo}} </p>
+    <p>cuerpo: {{pagina.cuerpo}}</p>
+    <p>Autor: {{pagina.autor}} </p>
+    <p>Fecha: {{pagina.fecha}} </p>
+    <p>Imagen: {{pagina.imagen}} </p>
+    <p>
+        <a class="btn btn-outline-warning" href="{% url 'PaginaList' %}"> Atrás </a>
+    </p>
+</container>
+
+{% endblock %}
