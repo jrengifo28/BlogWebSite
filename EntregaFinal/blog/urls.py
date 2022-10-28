@@ -3,6 +3,7 @@ from django.urls import path
 from blog.views import (
     # Vistas de la aplicación
     mostrar_inicio,
+    about_us,
     MyLogin,
     MyLogout,
 
@@ -25,6 +26,7 @@ urlpatterns = [
     path("", mostrar_inicio, name='Inicio'),
     path("login/", MyLogin.as_view(), name='Login'),
     path("logout/", MyLogout.as_view(), name='Logout'),
+    path("aboutus", about_us, name='About_us'),
 
 
     # Path de usuario
