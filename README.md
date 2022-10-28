@@ -8,6 +8,9 @@ ABOUT US:
 - Jhonathan Rengifo Castillo
     Encargado de:
     - Crear los modelos del proyecto.
+    - Crear las views para listar todos los usuarios y todas las páginas.
+    - Crear las views para el Detalle, editar y borrar de cada usuario.
+    - Crear las vistas y el backend del login, logout y registrarse.
 
 OBJETIVOS:
 1. Crear una aplicación WEB estilo BLOG programada en Python - Django, la cuál contendrá admin, perfiles, registro, páginas y formularios.
