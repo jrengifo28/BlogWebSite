@@ -1,4 +1,3 @@
-from re import L
 from django.shortcuts import render
 from blog.models import Pagina
 
@@ -28,10 +27,20 @@ def about_us(request):
     return render(request, "blog/about.html")
 
 
-# def registrarse(request):
-#     if request.method == "POST":
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
+def registrarse(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            username_capturado = form.cleaned_data["username"]
+            form.save()
+            return render(
+                request,
+                "blog/inicio.html",
+                {"mensaje": f"Bienvenido: {username_capturado}"},
+            )
+    else:
+        form = UserCreationForm()
+    return render(request, "blog/registro.html", {"form": form})
 
 
 class MyLogin(LoginView):
