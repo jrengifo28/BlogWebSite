@@ -1,0 +1,16 @@
+<head>
+    <title> Actualizar Página </title>
+</head>
+{% extends "blog/navegacion.html" %}
+{% load static %}
+
+{% block contenido_nuevo %}
+
+<form action="" method="POST">{% csrf_token %}
+    <table>Estas seguro que deseas borrar la página:
+        <li>{{ object.titulo }} ({{ object.autor }}) </li>
+    </table>
+    <button type="submit" class="btn btn-danger">Borrar</button>
+</form>
+
+{% endblock %}
