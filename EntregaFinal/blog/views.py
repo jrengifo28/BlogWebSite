@@ -1,6 +1,6 @@
 from re import L
 from django.shortcuts import render
-from blog.models import Usuario, Pagina
+from blog.models import Pagina
 
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -42,35 +42,6 @@ class MyLogout(LogoutView):
     template_name = "blog/logout.html"
 
 
-# Vistas de usuario
-
-class UsuarioList(LoginRequiredMixin, ListView):
-    model = Usuario
-    template_name = "blog/listar-usuarios.html"
-
-
-class UsuarioDetalle(LoginRequiredMixin, DetailView):
-    model = Usuario
-    template_name = "blog/usuario-detalle.html"
-
-
-class UsuarioCreacion(LoginRequiredMixin, CreateView):
-    model = Usuario
-    fields = ["nombre", "apellido", "email", "nombre_usuario", "contraseña"]
-    success_url = "/blog/usuario/list"
-
-
-class UsuarioActualizar(LoginRequiredMixin, UpdateView):
-    model = Usuario
-    success_url = "/blog/usuario/list"
-    fields = ["nombre", "apellido", "email", "nombre_usuario", "contraseña"]
-
-
-class UsuarioBorrar(LoginRequiredMixin, DeleteView):
-    model = Usuario
-    success_url = "/blog/usuario/list"
-
-
 # Vistas de Paginas
 
 class PaginaList(ListView):
@@ -78,6 +49,23 @@ class PaginaList(ListView):
     template_name = "blog/listar-paginas.html"
 
 
-# class PaginaDetalle(DetailView):
-#     model = Pagina
-#     template_name = "blog/pagina-detalle.html"
+class PaginaDetalle(DetailView):
+    model = Pagina
+    template_name = "blog/pagina-detalle.html"
+
+
+class PaginaCreacion(LoginRequiredMixin, CreateView):
+    model = Pagina
+    fields = ["titulo", "subtitulo", "cuerpo", "autor", "fecha", "imagen"]
+    success_url = "/blog/pagina/list"
+
+
+class PaginaActualizar(LoginRequiredMixin, UpdateView):
+    model = Pagina
+    success_url = "/blog/pagina/list"
+    fields = ["titulo", "subtitulo", "cuerpo", "autor", "fecha", "imagen"]
+
+
+class PaginaBorrar(LoginRequiredMixin, DeleteView):
+    model = Pagina
+    success_url = "/blog/pagina/list"

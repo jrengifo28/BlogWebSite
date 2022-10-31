@@ -7,18 +7,12 @@ from blog.views import (
     MyLogin,
     MyLogout,
 
-
-    # Vistas de Usuario
-    UsuarioList,
-    UsuarioDetalle,
-    UsuarioCreacion,
-    UsuarioActualizar,
-    UsuarioBorrar,
-
-
     # Vistas de Pagina
     PaginaList,
-    # PaginaDetalle,
+    PaginaDetalle,
+    PaginaCreacion,
+    PaginaActualizar,
+    PaginaBorrar,
 )
 
 urlpatterns = [
@@ -29,15 +23,10 @@ urlpatterns = [
     path("aboutus", about_us, name='About_us'),
 
 
-    # Path de usuario
-    path("usuario/list", UsuarioList.as_view(), name="UsuarioList"),
-    path("r'(?P<pk>\d+)^$'", UsuarioDetalle.as_view(), name="UsuarioDetalle"),
-    path("usuario-nuevo/", UsuarioCreacion.as_view(), name="UsuarioNuevo"),
-    path("editar/<pk>", UsuarioActualizar.as_view(), name="UsuarioActualizar"),
-    path("borrar/<pk>", UsuarioBorrar.as_view(), name="UsuarioBorrar"),
-
-
     # Path de Pagina
     path("pagina/list", PaginaList.as_view(), name="PaginaList"),
-    # path("r'(?P<pk>\d+)^$'", PaginaDetalle.as_view(), name="PaginaDetalle"),
+    path("r'(?P<pk>\d+)^$'", PaginaDetalle.as_view(), name="PaginaDetalle"),
+    path("pagina-nuevo/", PaginaCreacion.as_view(), name="PaginaNuevo"),
+    path("editar/<pk>", PaginaActualizar.as_view(), name="PaginaActualizar"),
+    path("borrar/<pk>", PaginaBorrar.as_view(), name="PaginaBorrar"),
 ]

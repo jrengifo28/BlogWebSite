@@ -1,19 +1,30 @@
 <head>
-    <title> Detalle de Páginas </title>
+    <title> Lista de Paginas </title>
 </head>
 {% extends "blog/navegacion.html" %}
 {% load static %}
 
 {% block contenido_nuevo %}
 
-<h3>Páginas Creadas</h3>
+<container>
+    <div class="row g-0">
+        <div class="col-sm 2"><a class="btn btn-success" href="{% url 'PaginaNuevo' %}">Crear Página</a></div>
+        <div class="col-sm 8"></div>
+        <div class="col-sm-2"></div>
+    </div>
+</container>
+<br>
+
+<h4>Páginas Registradas: </h4>
 
 <ul>
     {% for pagina in object_list %}
     <li>
         <p>Titulo: {{pagina.titulo}} - Subtitulo: {{pagina.subtitulo}} (Autor: {{pagina.autor}}) </p>
         <p>
-
+            <a class="btn btn-outline-success" href="{% url 'PaginaDetalle' pagina.id %}"> Ver Detalle </a>
+            <a class="btn btn-outline-warning" href="{% url 'PaginaActualizar' pagina.id %}"> Actualizar </a>
+            <a class="btn btn-outline-danger" href="{% url 'PaginaBorrar' pagina.id %}"> Borrar </a>
         </p>
     </li>
     {% endfor %}
