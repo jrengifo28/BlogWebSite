@@ -1,0 +1,15 @@
+<head>
+    <title> Avatar </title>
+</head>
+{% extends "blog/navegacion.html" %}
+{% load static %}
+
+{% block contenido_nuevo %}
+
+<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <a class="btn btn-outline-success" href="{% url 'Inicio' %}"> Regresar </a>
+    <button type="submit" class="btn btn-outline-warning">Cargar Imagen</button>
+</form>
+
+{% endblock %}

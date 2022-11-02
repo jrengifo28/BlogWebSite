@@ -28,6 +28,9 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="/blog/">Bloggueriando</a>
+            {% if avatar %}
+            <img height="40px" src="{{ avatar }}" />
+            {% endif %}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -42,6 +45,8 @@
                             href="{% url 'PaginaList' %}">Páginas</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'EditarPerfil' %}">Editar
                             Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{% url 'AgregarAvatar' %}">Agregar Avatar</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'About_us' %}">Acerca de
                             nosotros</a></li>
                     {% endif %}
