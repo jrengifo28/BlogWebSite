@@ -1,5 +1,5 @@
-from blog.models import Pagina
-from blog.forms import UserEditionForm
+from blog.models import Pagina, Avatar
+from blog.forms import UserEditionForm, AvatarForm
 
 from django.shortcuts import render
 from django.contrib.auth import authenticate
@@ -67,6 +67,20 @@ def editar_perfil(request):
     return render(request, "blog/editar_Perfil.html", contexto)
 
 
+def agregar_avatar(request):
+    if request.method != "POST":
+        form = AvatarForm()
+    else:
+        form = AvatarForm(request.POST, request.FILES)
+        if form.is_valid():
+            Avatar.objects.filter(user=request.user).delete()
+            form.save()
+            return render(request, "blog/inicio.html")
+
+    contexto = {"form": form}
+    return render(request, "blog/avatar_form.html", contexto)
+
+
 class MyLogin(LoginView):
     template_name = "blog/login.html"
 
@@ -76,7 +90,6 @@ class MyLogout(LogoutView):
 
 
 # Vistas de Paginas
-
 
 class PaginaList(ListView):
     model = Pagina

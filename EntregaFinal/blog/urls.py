@@ -6,6 +6,7 @@ from blog.views import (
     about_us,
     registrarse,
     editar_perfil,
+    agregar_avatar,
     MyLogin,
     MyLogout,
 
@@ -25,6 +26,7 @@ urlpatterns = [
     path("aboutus", about_us, name='About_us'),
     path("registrarse/", registrarse, name='Registrarse'),
     path("editar-perfil/", editar_perfil, name='EditarPerfil'),
+    path("agregar-avatar/", agregar_avatar, name='AgregarAvatar'),
 
 
     # Path de Pagina
