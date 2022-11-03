@@ -24,6 +24,7 @@ def mostrar_inicio(request):
     return render(request, "blog/inicio.html")
 
 
+@login_required
 def about_us(request):
     return render(request, "blog/about.html")
 
@@ -91,12 +92,12 @@ class MyLogout(LogoutView):
 
 # Vistas de Paginas
 
-class PaginaList(ListView):
+class PaginaList(LoginRequiredMixin, ListView):
     model = Pagina
     template_name = "blog/listar-paginas.html"
 
 
-class PaginaDetalle(DetailView):
+class PaginaDetalle(LoginRequiredMixin, DetailView):
     model = Pagina
     template_name = "blog/pagina-detalle.html"
 
