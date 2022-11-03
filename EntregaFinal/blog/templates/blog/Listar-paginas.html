@@ -17,6 +17,7 @@
 
 <h4>Páginas Registradas: </h4>
 
+{% if object_list %}
 <ul>
     {% for pagina in object_list %}
     <li>
@@ -28,6 +29,12 @@
         </p>
     </li>
     {% endfor %}
+    {% else %}
+    <h4>
+        <marquee behavior="alternate" color="red">Aún no se encuentran páginas registradas</marquee>
+    </h4>
+
+    {% endif %}
 </ul>
 
 {% endblock %}
