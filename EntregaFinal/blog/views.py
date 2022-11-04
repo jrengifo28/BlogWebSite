@@ -21,7 +21,9 @@ from django.views.generic import (
 
 @login_required
 def mostrar_inicio(request):
-    return render(request, "blog/inicio.html")
+    avatar = Avatar.objects.filter(user=request.user).first()
+    contexto = {"avatar": avatar.imagen.url}
+    return render(request, "blog/inicio.html", contexto)
 
 
 @login_required
@@ -47,6 +49,7 @@ def registrarse(request):
 
 @login_required
 def editar_perfil(request):
+    avatar = Avatar.objects.filter(user=request.user).first()
     user = request.user
     if request.method != "POST":
         form = UserEditionForm(initial={"email": user.email})
@@ -64,10 +67,12 @@ def editar_perfil(request):
     contexto = {
         "user": user,
         "form": form,
+        "avatar": avatar.imagen.url
     }
     return render(request, "blog/editar_Perfil.html", contexto)
 
 
+@login_required
 def agregar_avatar(request):
     if request.method != "POST":
         form = AvatarForm()
