@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Clean Blog - Start Bootstrap Theme</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <title>Sobre Nosotros</title>
+    <link rel="icon" type="image/x-icon" href="/static/blog/assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -37,9 +37,13 @@
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="{% url 'PaginaList' %}">Páginas</a></li>
+                            href="{% url 'PaginaList' %}">Páginas</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'EditarPerfil' %}">Editar
                             Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{% url 'AgregarAvatar' %}">Agregar
+                            Avatar</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'About_us' %}">Acerca de
                             nosotros</a></li>
                     {% endif %}
@@ -58,7 +62,7 @@
     </nav>
 
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('assets/img/about-bg.jpg')">
+    <header class="masthead" style="background-image: url('/static/blog/assets/img/about-bg.jpg')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
@@ -87,11 +91,11 @@
                         <br>Me gusta...
                     <h4>Jhonathan Rengifo Castillo</h4>
                     <strong>¿Quién soy? </strong>
-                    <br>¡Hola todos! Soy Jhonathan, nací en Cali - Colombias, tengo 31 años y soy ingeniero de sistemas.
+                    <br>¡Hola todos! Soy Jhonathan, nací en Cali - Colombia, tengo 31 años y soy ingeniero de sistemas.
                     <p><strong>¿Qué me gusta?</strong>
                         <br>Me gusta compartir tiempo con mi novia, familia y amigos, apasionado por el
-                        Voleyball, aunque también me gusta el futbol. Me gusta salir a comer, ir al cine y todo lo
-                        relacionado con tecnología.
+                        Voleyball, pero también me gusta el futbol. Me gusta salir a comer, ir al cine y viajar por el
+                        mundo. Algo que disfruto mucho, es todo lo relacionado con tecnología.
                     </p>
                 </div>
             </div>
