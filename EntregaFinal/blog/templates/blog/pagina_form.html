@@ -8,6 +8,7 @@
 
 <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
     {{ form.as_p }}
+    <a class="btn btn-outline-success" href="{% url 'PaginaList' %}"> Regresar </a>
     <input type="submit" value="Actualizar" class="btn btn-outline-warning" />
 </form>
 

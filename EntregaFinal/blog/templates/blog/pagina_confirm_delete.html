@@ -8,8 +8,9 @@
 
 <form action="" method="POST">{% csrf_token %}
     <table>Estas seguro que deseas borrar la página:
-        <li>{{ object.titulo }} ({{ object.autor }}) </li>
+        <li>{{ object.titulo }} ({{ object.subtitulo }}) - De: {{object.autor}} </li>
     </table>
+    <a class="btn btn-outline-success" href="{% url 'PaginaList' %}"> Regresar </a>
     <button type="submit" class="btn btn-danger">Borrar</button>
 </form>
 

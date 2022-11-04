@@ -31,7 +31,7 @@ urlpatterns = [
 
     # Path de Pagina
     path("pagina/list", PaginaList.as_view(), name="PaginaList"),
-    path("r'(?P<pk>\d+)^$'", PaginaDetalle.as_view(), name="PaginaDetalle"),
+    path("detalle/<pk>", PaginaDetalle.as_view(), name="PaginaDetalle"),
     path("pagina-nuevo/", PaginaCreacion.as_view(), name="PaginaNuevo"),
     path("editar/<pk>", PaginaActualizar.as_view(), name="PaginaActualizar"),
     path("borrar/<pk>", PaginaBorrar.as_view(), name="PaginaBorrar"),

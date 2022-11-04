@@ -13,7 +13,7 @@ class Pagina(models.Model):
     imagen = models.FileField()
 
     def __str__(self):
-        return f"Titulo: {self.titulo} Subtitulo: {self.subtitulo} - ({self.autor})"
+        return f"Titulo: {self.titulo} ({self.subtitulo}) - Creado por: {self.autor}"
 
 
 class Avatar(models.Model):
