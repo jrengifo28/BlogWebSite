@@ -21,9 +21,12 @@ from django.views.generic import (
 
 @login_required
 def mostrar_inicio(request):
-    avatar = Avatar.objects.filter(user=request.user).first()
-    contexto = {"avatar": avatar.imagen.url}
-    return render(request, "blog/inicio.html", contexto)
+    try:
+        avatar = Avatar.objects.filter(user=request.user).first()
+        contexto = {"avatar": avatar.imagen.url}
+        return render(request, "blog/inicio.html", contexto)
+    except:
+        return render(request, "blog/inicio.html")
 
 
 @login_required
@@ -49,27 +52,48 @@ def registrarse(request):
 
 @login_required
 def editar_perfil(request):
-    avatar = Avatar.objects.filter(user=request.user).first()
-    user = request.user
-    if request.method != "POST":
-        form = UserEditionForm(initial={"email": user.email})
-    else:
-        form = UserEditionForm(request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            user.email = data["email"]
-            user.first_name = data["first_name"]
-            user.last_name = data["last_name"]
-            user.set_password(data["password1"])
-            user.save()
-            return render(request, "blog/inicio.html")
+    try:
+        avatar = Avatar.objects.filter(user=request.user).first()
+        user = request.user
+        if request.method != "POST":
+            form = UserEditionForm(initial={"email": user.email})
+        else:
+            form = UserEditionForm(request.POST)
+            if form.is_valid():
+                data = form.cleaned_data
+                user.email = data["email"]
+                user.first_name = data["first_name"]
+                user.last_name = data["last_name"]
+                user.set_password(data["password1"])
+                user.save()
+                return render(request, "blog/inicio.html")
 
-    contexto = {
-        "user": user,
-        "form": form,
-        "avatar": avatar.imagen.url
-    }
-    return render(request, "blog/editar_Perfil.html", contexto)
+        contexto = {
+            "user": user,
+            "form": form,
+            "avatar": avatar.imagen.url
+        }
+        return render(request, "blog/editar_Perfil.html", contexto)
+    except:
+        user = request.user
+        if request.method != "POST":
+            form = UserEditionForm(initial={"email": user.email})
+        else:
+            form = UserEditionForm(request.POST)
+            if form.is_valid():
+                data = form.cleaned_data
+                user.email = data["email"]
+                user.first_name = data["first_name"]
+                user.last_name = data["last_name"]
+                user.set_password(data["password1"])
+                user.save()
+                return render(request, "blog/inicio.html")
+
+        contexto = {
+            "user": user,
+            "form": form,
+        }
+        return render(request, "blog/editar_Perfil.html", contexto)
 
 
 @login_required
