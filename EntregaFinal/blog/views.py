@@ -2,8 +2,7 @@ from blog.models import Pagina, Avatar
 from blog.forms import UserEditionForm, AvatarForm
 
 from django.shortcuts import render
-from django.contrib.auth import authenticate
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -11,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
     DetailView,
+
     CreateView,
     UpdateView,
     DeleteView,
