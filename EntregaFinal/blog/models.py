@@ -10,7 +10,7 @@ class Pagina(models.Model):
     cuerpo = models.CharField(max_length=256)
     autor = models.CharField(max_length=40)
     fecha = models.DateField()
-    imagen = models.FileField()
+    imagen = models.FileField(blank=True)
 
     def __str__(self):
         return f"Titulo: {self.titulo} ({self.subtitulo}) - Creado por: {self.autor}"
