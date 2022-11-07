@@ -3,16 +3,17 @@ ENTREGA FINAL CODERHOUSE - BLOG
 ABOUT US:
 - Jimena Cambronero.
     Encargada de: 
+    - Crear los modelos del proyecto, las urls y views para listar las páginas.
+    - Agregar los background de la página de inicio, el about_us y el resto de templates.
 - Jexson Montilla.
     Encargado de: 
+    - Crear las urls y views para el Detalle, editar y borrar de cada usuario.
+    - Crear los Unit Test.
 - Jhonathan Rengifo Castillo
     Encargado de:
-    - Crear los modelos del proyecto.
-    - Crear las urls y views para listar todos los usuarios y todas las páginas.
-    - Crear las urls y views para el Detalle, editar y borrar de cada usuario.
     - Crear las urls, vistas y el backend del login, logout y registrarse, y la funcionalidad para que al inicio solicite logearse y no muestre los botones de navegación y los mustre cuando el usuario esté logueado.
     - Crear la funcionalidad de cargar avatares y mostrarlos en el inicio y en editar perfiles.
-    - Agregar los background de la página de inicio, el about_us y el resto de templates.
+    - Crear la app de mensajería.
 
 INSTRUCCIONES:
 1. Para ingresar a la página de inicio lo puede hacer mediante el link http://127.0.0.1:8000/blog/login/
@@ -29,6 +30,4 @@ INSTRUCCIONES:
     - Para ingresar al "acerca de nosotros": http://127.0.0.1:8000/blog/aboutus
     - El template de confirmación de logout se visualiza mediante el enlace: http://127.0.0.1:8000/blog/logout/
 
-LINK DEL VIDEO, donde se muestra la App funcionando:
-
-CASOS DE PRUEBA (3):
+3. LINK DEL VIDEO, donde se muestra la App funcionando:
