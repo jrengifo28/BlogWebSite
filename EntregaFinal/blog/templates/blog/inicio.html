@@ -12,7 +12,8 @@
     {% if avatar %}
     <img height="40px" src="{{ avatar }}" />
     {% endif %}
-    <p>Bienvenido de nuevo: <strong><i>{{ user.first_name }} {{user.last_name}}</i></strong></p>
+    <p>Bienvenido de nuevo: <strong><i>({{user.username}}) {{ user.first_name }} {{user.last_name}}</i></strong>
+    </p>
 </marquee>
 {% endif %}
 
