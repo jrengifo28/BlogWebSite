@@ -1,21 +1,5 @@
 ENTREGA FINAL CODERHOUSE - BLOG
 
-Sobre el proyecto:
-- Jimena Cambronero.
-    Encargada de: 
-    - Crear los modelos del proyecto, las urls y views para listar las páginas.
-    - Crear los Unit Test.
-- Jexson Montilla.
-    Encargado de: 
-    - Agregar los background de la página de inicio, el about_us y el resto de templates.
-    - Crear las urls y views para el detalle, editar y borrar de cada página.
-- Jhonathan Rengifo Castillo
-    Encargado de:
-    - Crear las urls, vistas, formularios y el backend del login, logout y registrarse, la funcionalidad para que al inicio solicite logearse y no muestre los botones de navegación y los mustre cuando el usuario esté logueado. Crear la funcionalidad de mostrar el link para cargar Avatares sólo a usuarios administradores.
-    - Crear la funcionalidad de cargar avatares y mostrarlos en el template de inicio y en de editar perfiles.
-    - Crear la app de mensajería.
-    - Explicar el video.
-
 INSTRUCCIONES:
 
 Para navegar en la página lo puede hacer mediante los links de navegación en la parte superior de la página o lo puede hacer mediante los siguientes links de acceso
